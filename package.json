@@ -1,0 +1,22 @@
+{
+  "name": "@dwdht/peers",
+  "version": "0.1.1",
+  "description": "dWeb Library For Encoding List of Peers To A Buffer.",
+  "contributors": [
+    "Jared Rice Sr. <jared@dwebs.io>",
+    "Bench Computer, Inc. <legal@benchx.io>"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^7.1.2",
+    "tape": "^4.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
