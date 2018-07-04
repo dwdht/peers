@@ -1,6 +1,6 @@
 {
   "name": "@dwdht/peers",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "dWeb Library For Encoding List of Peers To A Buffer.",
   "contributors": [
     "Jared Rice Sr. <jared@dwebs.io>",
