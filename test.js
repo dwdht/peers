@@ -1,19 +1,19 @@
 var tape = require('tape')
 var peers = require('./')
 
-tape('encodes', function (t) {
+tape('dWeb DHT Peer Tests: Encodes', function (t) {
   t.same(peers.encode([{host: '127.0.0.1', port: 80}]).length, 6)
   t.same(peers.encode([{host: '127.0.0.1', port: 80}, {host: '127.0.0.1', port: 8080}]).length, 12)
   t.end()
 })
 
-tape('encodingLength', function (t) {
+tape('dWeb DHT Peer Tests: encodingLength', function (t) {
   t.same(peers.encodingLength([{host: '127.0.0.1', port: 80}]), 6)
   t.same(peers.encodingLength([{host: '127.0.0.1', port: 80}, {host: '127.0.0.1', port: 8080}]), 12)
   t.end()
 })
 
-tape('encodes + decodes', function (t) {
+tape('dWeb DHT Peer Tests: Encodes + Decodes', function (t) {
   var a = [{host: '127.0.0.1', port: 80}]
   var b = [{host: '127.0.0.1', port: 80}, {host: '127.0.0.1', port: 8080}]
   t.same(peers.decode(peers.encode(a)), a)
@@ -21,7 +21,7 @@ tape('encodes + decodes', function (t) {
   t.end()
 })
 
-tape('encodes + decodes + offset', function (t) {
+tape('dWeb DHT Peer Tests: Encodes + Decodes + Offset', function (t) {
   var a = [{host: '127.0.0.1', port: 80}]
   var b = [{host: '127.0.0.1', port: 80}, {host: '127.0.0.1', port: 8080}]
   t.same(peers.decode(peers.encode(a, Buffer(8), 2), 2), a)
@@ -29,7 +29,7 @@ tape('encodes + decodes + offset', function (t) {
   t.end()
 })
 
-tape('encodes + decodes + offset + end', function (t) {
+tape('dWeb DHT Peer Tests: Encodes + Decodes + Offset + End', function (t) {
   var a = [{host: '127.0.0.1', port: 80}]
   var b = [{host: '127.0.0.1', port: 80}, {host: '127.0.0.1', port: 8080}]
   t.same(peers.decode(peers.encode(a, Buffer(100)), 0, 6), a)
@@ -37,7 +37,7 @@ tape('encodes + decodes + offset + end', function (t) {
   t.end()
 })
 
-tape('port 0 not allowed', function (t) {
+tape('dWeb DHT Peer Tests: Port 0 Not Allowed', function (t) {
   t.plan(1)
   var a = [{host: '127.0.0.1', port: 0}]
   t.throws(function () {
@@ -46,7 +46,7 @@ tape('port 0 not allowed', function (t) {
   t.end()
 })
 
-tape('encodes with peer id', function (t) {
+tape('dWeb DHT Peer Tests: Encodes With Peer ID', function (t) {
   var p = peers.idLength(5)
   var a = [{id: Buffer('hello'), host: '127.0.0.1', port: 80}]
   var b = [{id: Buffer('hello'), host: '127.0.0.1', port: 80}, {id: Buffer('world'), host: '127.0.0.1', port: 8080}]
